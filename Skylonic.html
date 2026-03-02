@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skylonic — Custom AI Agents for Small Businesses</title>
+  <meta name="description" content="Custom AI agents that automate support, leads, bookings, and reviews — built for local businesses like dentists, realtors, gyms, and shops."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a1f44;       /* deep navy */
+      --accent-start: #3b82f6;  /* blue */
+      --accent-end: #ff6b35;    /* orange */
+      --gradient: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+      --text: #e2e8f0;
+      --text-dark: #0f172a;
+      --bg: #020617;
+      --card-bg: rgba(15, 23, 42, 0.6);
+      --blur: blur(16px);
+      --border: rgba(255,255,255,0.08);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+    header {
+      padding: 2rem 0;
+      position: sticky; top:0; z-index:100;
+      background: rgba(2,6,23,0.7);
+      backdrop-filter: var(--blur);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-img { max-width: 400px; height: auto; display: block; margin: 0 auto; }
+    .tagline { text-align: center; font-size: 1.1rem; opacity: 0.85; margin-top: 0.75rem; }
+
+    .hero {
+      padding: 8rem 0 10rem;
+      text-align: center;
+      background: var(--gradient);
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset:0;
+      background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      margin-bottom: 1.25rem;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 1.1rem 2.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: all 0.35s ease;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      margin-left: 1.5rem;
+    }
+    .btn-outline:hover { background: white; color: var(--primary); }
+
+    section { padding: 8rem 0; }
+    h2 { font-size: 3.2rem; text-align: center; margin-bottom: 4rem; color: white; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 60px rgba(59,130,246,0.18);
+    }
+    .card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1.2rem;
+      color: #93c5fd;
+    }
+    .card p { opacity: 0.9; }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), #1e3a8a);
+      padding: 10rem 1rem;
+    }
+    .cta h2 { margin-bottom: 1.5rem; }
+    .cta p { font-size: 1.35rem; max-width: 640px; margin: 0 auto 2.5rem; opacity: 0.92; }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    footer a { color: #93c5fd; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 5rem 0 7rem; }
+      .hero h1 { font-size: 3.5rem; }
+      .btn { padding: 1rem 2rem; font-size: 1.05rem; }
+      section { padding: 5rem 0; }
+      h2 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="skyloniclogo.png" alt="Skylonic Logo" class="logo-img">
+      <div class="tagline">Custom AI Agents Built for Small Businesses</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Skylonic</h1>
+      <p>AI agents that handle support, qualify leads, book appointments, reply to reviews, and more — tailored for dentists, realtors, gyms, shops, and local pros.</p>
+      <a href="#contact" class="btn">Get Your Custom Agent</a>
+      <a href="#features" class="btn btn-outline">See How It Works</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>Powerful Agents. Real Results.</h2>
+      <div class="features">
+        <div class="card">
+          <h3>24/7 Customer Support</h3>
+          <p>Answers questions, qualifies leads, books calls — never miss a customer again.</p>
+        </div>
+        <div class="card">
+          <h3>Smart Review Responder</h3>
+          <p>Auto-replies to Google, Yelp, Facebook — keeps your reputation strong in your voice.</p>
+        </div>
+        <div class="card">
+          <h3>Lead Qualification & Nurture</h3>
+          <p>Chat or voice agents that qualify, sync to CRM, and follow up automatically.</p>
+        </div>
+        <div class="card">
+          <h3>Voice & Phone Integration</h3>
+          <p>Handles calls, messages, bookings — seamless escalation when needed.</p>
+        </div>
+        <div class="card">
+          <h3>Local-First Option</h3>
+          <p>Run on your hardware with no cloud costs — total privacy and control.</p>
+        </div>
+        <div class="card">
+          <h3>Simple Pricing</h3>
+          <p>One-time setup + flat monthly fee. Starts low, scales with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Ready to Automate & Grow?</h2>
+      <p>Book a free 20-minute call. We'll map out the perfect AI agent for your business — no pressure, just clarity.</p>
+      <a href="mailto:JoeN@skylonic.com?subject=Free%20AI%20Agent%20Consult" class="btn" style="background:#ff6b35; color:white;">Email Joe → Schedule Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Skylonic. Fort Worth, Texas.<br>
+      <a href="mailto:JoeN@skylonic.com">JoeN@skylonic.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
